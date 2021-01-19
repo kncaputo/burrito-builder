@@ -18,12 +18,16 @@ class App extends Component {
     .catch(err => console.error('Error fetching:', err));
   }
 
+  createOrder = (order) => {
+
+  }
+
   render() {
     return (
       <main className="App">
         <header>
           <h1>Burrito Builder</h1>
-          <OrderForm />
+          <OrderForm createOrder={this.createOrder}/>
         </header>
 
         <Orders orders={this.state.orders}/>
