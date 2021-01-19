@@ -18,9 +18,19 @@ describe('OrderForm', () => {
 
   it('should render correctly', () => {
     const nameInput = screen.getByPlaceholderText('Name');
-    screen.debug()
+    const ingredient1 = screen.getByText('beans');
+    const ingredient2 = screen.getByText('steak');
+    const ingredient3 = screen.getByText('carnitas');
+    const submitButton = screen.getByText('Submit Order');
+
 
     expect(nameInput).toBeInTheDocument();
+    expect(ingredient1).toBeInTheDocument();
+    expect(ingredient2).toBeInTheDocument();
+    expect(ingredient3).toBeInTheDocument();
+    expect(submitButton).toBeInTheDocument();
   });
+
+  
   
 })
