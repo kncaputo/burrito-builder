@@ -56,5 +56,17 @@ describe('OrderForm', () => {
     expect(mockCreateOrder).not.toHaveBeenCalled();
     expect(nameInputError).toBeInTheDocument();
   });
-  
+
+  it('should not be able to submit form without at least one ingredient', () => {
+    const nameInput = screen.getByPlaceholderText('Name');
+    const submitButton = screen.getByText('Submit Order');
+
+    userEvent.type(nameInput, 'Bailey');
+    userEvent.click(submitButton);
+
+    const ingredientInputError = screen.getByText('Please select at least one ingredient');
+
+    expect(mockCreateOrder).not.toHaveBeenCalled();
+    expect(ingredientInputError).toBeInTheDocument();
+  });
 });
