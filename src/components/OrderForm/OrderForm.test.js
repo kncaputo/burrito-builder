@@ -51,8 +51,10 @@ describe('OrderForm', () => {
     userEvent.click(ingredient1);
     userEvent.click(submitButton);
 
+    const nameInputError = screen.getByText('Please provide a name');
+
     expect(mockCreateOrder).not.toHaveBeenCalled();
-    // expect(alert).toHaveBeenCalled();
+    expect(nameInputError).toBeInTheDocument();
   });
   
 });

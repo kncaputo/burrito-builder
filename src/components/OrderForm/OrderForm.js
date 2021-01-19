@@ -72,7 +72,7 @@ class OrderForm extends Component {
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
         {this.state.error &&
-          <p>Please provide a name and select at least one ingredient</p>
+          <p>{this.state.error}</p>
         }
 
         <button onClick={e => this.handleSubmit(e)}>
