@@ -24,14 +24,4 @@ export const orders = {
   }]
 }
 
-export const order = {
-  "id": 1,
-  "name": "Pat",
-  "ingredients": [
-  "beans",
-  "lettuce",
-  "carnitas",
-  "queso fresco",
-  "jalapeno"
-  ]
-}
+export const mockOrder = {id: 1, name: 'Bailey', ingredients: ['beans']};
