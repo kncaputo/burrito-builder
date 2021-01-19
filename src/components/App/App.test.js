@@ -18,9 +18,11 @@ describe('App', () => {
   });
 
   it('should render correctly', () => {
-    const order1Name = screen.getByText('Pat')
-    const order2Name = screen.getByText('Sam')
+    const pageTitle = screen.getByText('Burrito Builder');
+    const order1Name = screen.getByText('Pat');
+    const order2Name = screen.getByText('Sam');
     
+    expect(pageTitle).toBeInTheDocument();
     expect(order1Name).toBeInTheDocument();
     expect(order2Name).toBeInTheDocument();
   });

@@ -6,9 +6,11 @@ import userEvent from '@testing-library/user-event';
 
 describe('OrderForm', () => {
   let mockCreateOrder;
+  // let mockAlert;
 
   beforeEach(() => {
     mockCreateOrder = jest.fn();
+    // mockAlert = jest.fn();
 
     render(
       <OrderForm createOrder={mockCreateOrder}/>
@@ -30,7 +32,7 @@ describe('OrderForm', () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  it('should create order on click if name and at least one ingreident is chosen', () => {
+  it('should create order on click if name, and at least one ingreident are provided', () => {
     const nameInput = screen.getByPlaceholderText('Name');
     const ingredient1 = screen.getByText('beans');
     const submitButton = screen.getByText('Submit Order');
@@ -40,6 +42,17 @@ describe('OrderForm', () => {
     userEvent.click(submitButton);
 
     expect(mockCreateOrder).toHaveBeenCalled();
+  });
+
+  it('should not be able to submit form without a name', () => {
+    const ingredient1 = screen.getByText('beans');
+    const submitButton = screen.getByText('Submit Order');
+
+    userEvent.click(ingredient1);
+    userEvent.click(submitButton);
+
+    expect(mockCreateOrder).not.toHaveBeenCalled();
+    // expect(alert).toHaveBeenCalled();
   });
   
 });
