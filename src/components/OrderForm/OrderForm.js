@@ -18,7 +18,7 @@ class OrderForm extends Component {
     e.preventDefault();
 
     if (this.state.ingredients.length > 0) {
-      this.setState( { ingredients: [...this.state.ingredients, e.target.name] })
+      this.setState( { ingredients: [e.target.name, ...this.state.ingredients] })
     } else {
       this.setState( { ingredients: [e.target.name] })
     }
@@ -26,8 +26,8 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    const order = {...this.state};
+    const id = Date.now();
+    const order = {...this.state, id};
 
     this.props.createOrder(order);
     this.clearInputs();

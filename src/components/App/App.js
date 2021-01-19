@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   createOrder = (order) => {
-
+    this.setState({ orders: [order, ...this.state.orders]})
   }
 
   render() {
