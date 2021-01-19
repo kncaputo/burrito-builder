@@ -14,6 +14,16 @@ class OrderForm extends Component {
     this.setState({ name: e.target.value})
   }
 
+  handleIngredientChange = e => {
+    e.preventDefault();
+
+    if (this.state.ingredients.length > 0) {
+      this.setState( { ingredients: [...this.state.ingredients, e.target.name] })
+    } else {
+      this.setState( { ingredients: [e.target.name] })
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
     this.clearInputs();
