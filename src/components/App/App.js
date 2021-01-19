@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {getOrders, postOrders} from '../../apiCalls';
+import { getOrders, postOrder } from '../../apiCalls';
 import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
@@ -21,7 +21,7 @@ class App extends Component {
   createOrder = (order) => {
     const onSuccess = () => alert('Reservation booked');
 
-    postOrders(order, onSuccess);
+    postOrder(order, onSuccess);
     this.setState({ orders: [order, ...this.state.orders]})
   }
 

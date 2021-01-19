@@ -10,7 +10,7 @@ export const getOrders = () => {
   })
 }
 
-export const postOrders = (order, onSuccess) => {
+export const postOrder = (order, onSuccess) => {
   return fetch(endpoint, {
     method: 'POST',
     headers: {
