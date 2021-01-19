@@ -6,7 +6,7 @@ const Orders = props => {
     const { id, name, ingredients } = order;
 
     return (
-      <div className="order" key={id}>
+      <div className="order" key={id} data-testid={name}>
         <h3>{name}</h3>
         <ul className="ingredient-list">
           {ingredients.map(ingredient => {

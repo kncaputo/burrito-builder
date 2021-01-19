@@ -3,7 +3,6 @@ import OrderForm from './OrderForm';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-// import { mockOrder } from '../sampleData.js';
 
 describe('OrderForm', () => {
   let mockCreateOrder;
