@@ -33,7 +33,7 @@ class OrderForm extends Component {
       alert('Please select at least one ingredient')
     } else {
       const id = Date.now();
-      const order = {...this.state, id};
+      const order = {id, ...this.state};
   
       this.props.createOrder(order);
       this.clearInputs();
