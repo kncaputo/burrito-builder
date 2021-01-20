@@ -35,8 +35,8 @@ class OrderForm extends Component {
     } else if (this.state.ingredients.length === 0) {
       this.setState({ error: 'Please select at least one ingredient' });
     } else {
-      const id = Date.now();
-      const order = {id, name: this.state.name, ingredients: this.state.ingredients };
+      // const id = Date.now();
+      const order = {name: this.state.name, ingredients: this.state.ingredients };
   
       this.props.createOrder(order);
       this.clearInputs();
@@ -46,6 +46,8 @@ class OrderForm extends Component {
   clearInputs = () => {
     this.setState({name: '', ingredients: []});
   }
+
+  
 
   render() {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];

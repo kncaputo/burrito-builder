@@ -19,10 +19,9 @@ class App extends Component {
   }
 
   createOrder = (order) => {
-    const onSuccess = () => alert('Reservation booked');
-
-    postOrder(order, onSuccess);
-    this.setState({ orders: [order, ...this.state.orders]})
+    postOrder(order)
+    .then(() => this.componentDidMount())
+    .catch(error => console.log(error))
   }
 
   render() {

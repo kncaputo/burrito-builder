@@ -6,11 +6,9 @@ import userEvent from '@testing-library/user-event';
 
 describe('OrderForm', () => {
   let mockCreateOrder;
-  // let mockAlert;
 
   beforeEach(() => {
     mockCreateOrder = jest.fn();
-    // mockAlert = jest.fn();
 
     render(
       <OrderForm createOrder={mockCreateOrder}/>
