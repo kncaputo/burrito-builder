@@ -28,7 +28,7 @@ describe('App', () => {
     expect(order2Name).toBeInTheDocument();
   });
 
-  it('should be able to add a new order', async () => {
+  it('should be able to add a new order', () => {
     const nameInput = screen.getByPlaceholderText('Name');
     const ingredient1 = screen.getByTestId('beans');
     const submitButton = screen.getByText('Submit Order');
@@ -37,11 +37,10 @@ describe('App', () => {
     userEvent.click(ingredient1);
     userEvent.click(submitButton);
 
-    // const orderName = await waitFor(() => screen.getByText('Bailey'));
-    // const orderCard = await waitFor(() => screen.getByTestId('Bailey'));
+    const orderName = screen.getByText('Bailey');
+    const orderCard = screen.getByTestId('Bailey');
 
-    // expect(orderName).toBeInTheDocument();
-    // expect(orderCard).toBeInTheDocument();
-    
+    expect(orderName).toBeInTheDocument();
+    expect(orderCard).toBeInTheDocument();
   });
 });
